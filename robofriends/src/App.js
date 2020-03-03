@@ -1,18 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {robots} from './robots';
+import CardList from './CardList';
+import SearchBox from './SearchBox';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Hello World        
-        </p>
-      </header>
+const App = () => {
+    return (
+    <div className='tc'>
+        <h1>Robo Friends</h1>
+        <SearchBox />
+        <CardList robots={robots} />
     </div>
-  );
+    )
 }
 
 export default App;
