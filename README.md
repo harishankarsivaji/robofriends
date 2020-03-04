@@ -1,12 +1,12 @@
 # ROBO FRIENDS
 
-Simple react application using react hooks
+Simple react application displaying cards of user information.
 
 # Using React Hooks 
 
-* Using useState() with functional components.
+* Using useState() hook for setting the react state to functional components.
 
-* Fetch API & useEffect() 
+* Fetch API - useEffect() 
 
-* Search robot names in the search bar.
+* useCallback() - Search robot names in the search bar. Passing callbacks to optimize child components when updating.
 
