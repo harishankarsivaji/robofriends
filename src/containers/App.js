@@ -4,7 +4,7 @@ import { connect, useSelector, useDispatch } from 'react-redux';
 import CardList from '../components/CardList';
 import SearchBox from '../components/SearchBox';
 import Scroll from '../components/Scroll';
-import { setSearchField } from '../action';
+import { setSearchField } from '../Redux/action';
 
 const App = () => {
 

@@ -4,7 +4,7 @@ import App from './containers/App';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import { createLogger } from 'redux-logger';
-import { searchRobots } from './reducers'
+import { searchRobots } from './Redux/reducers'
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 import 'tachyons';

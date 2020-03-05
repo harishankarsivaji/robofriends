@@ -10,3 +10,9 @@ Simple react application displaying cards of user information.
 
 * useCallback() - Search robot names in the search bar. Passing callbacks to optimize child components when updating.
 
+# Added React-Redux 
+
+* useSelector()
+* useDispatch()
+
+### Added Logger to check what actins are triggered in the reducer 
