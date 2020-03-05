@@ -1,13 +1,18 @@
 import React, { useCallback, useState, useEffect} from 'react';
+import { connect, useSelector, useDispatch } from 'react-redux';
 // import {robots} from './robots';
 import CardList from '../components/CardList';
 import SearchBox from '../components/SearchBox';
 import Scroll from '../components/Scroll';
+import { setSearchField } from '../Redux/action';
 
 const App = () => {
 
     const [robots, setRobots] =useState([]);
-    const [searchField, setSearchField] =useState('');
+    // const [searchField, setSearchField] =useState('');
+        
+    const dispatch = useDispatch();
+    const searchField = useSelector( (state) => state.searchField)
 
   useEffect(() => {
     async function fetchData() {
@@ -18,10 +23,12 @@ const App = () => {
     }
     fetchData();
   });
-
-    const handleChange = (event) => { 
-        setSearchField (event.target.value);       
-    };
+    const onSearchChange = (event) => {
+        dispatch (setSearchField(event.target.value))
+    }
+    // const handleChange = (event) => { 
+    //     setSearchField (event.target.value);       
+    // };
 
     const filteredRobot = useCallback ( robots.filter(robots => {
         return robots.name.toLowerCase().includes(searchField.toLowerCase());
@@ -30,7 +37,7 @@ const App = () => {
     return (
         <div className='tc'>
             <h1 className='fw3 f1'> --- Hello Robots --- </h1>
-            <SearchBox searchChange={handleChange}/>
+            <SearchBox searchChange={onSearchChange}/>
             <Scroll>
                 <CardList robots={filteredRobot} />
             </Scroll>
@@ -38,4 +45,4 @@ const App = () => {
     )
 }
 
-export default App;
+export default connect()(App);
