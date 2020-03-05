@@ -1,13 +1,18 @@
 import React, { useCallback, useState, useEffect} from 'react';
+import { connect, useSelector, useDispatch } from 'react-redux';
 // import {robots} from './robots';
 import CardList from '../components/CardList';
 import SearchBox from '../components/SearchBox';
 import Scroll from '../components/Scroll';
+import { setSearchField } from '../action';
 
 const App = () => {
 
     const [robots, setRobots] =useState([]);
     const [searchField, setSearchField] =useState('');
+        
+    // const dispatch = useDispatch();
+    // const searchField = useSelector( (state) => state.searchField)
 
   useEffect(() => {
     async function fetchData() {
@@ -38,4 +43,4 @@ const App = () => {
     )
 }
 
-export default App;
+export default connect()(App);
